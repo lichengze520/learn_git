@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>response布局</title>
+    </title>
+    <style>
+        .app {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bolder;
+        }
+
+        @media (min-width: 1201px) {
+            .app {
+                background-color: red;
+                font-size: 50px;
+                color: aliceblue;
+            }
+        }
+
+        @media (max-width: 1200px) and (min-width: 800px) {
+            .app {
+                background-color: blue;
+                font-size: 40px;
+                color: rgb(94, 102, 109);
+            }
+        }
+
+        @media (max-width: 799px) and (min-width: 400px) {
+            .app {
+                background-color: rgb(255, 0, 106);
+                font-size: 30px;
+                color: rgb(242, 255, 240);
+            }
+        }
+
+        @media (max-width: 399px) {
+            .app {
+                background-color: rgb(0, 255, 0);
+                font-size: 20px;
+                color: rgb(255, 240, 252);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="app"></div>
+    <script>
+        let app = document.querySelector('.app')
+        app.innerHTML = app.offsetWidth
+        window.onresize = function (e) {
+            app.innerHTML = app.offsetWidth
+        }
+    </script>
+</body>
+
+</html>
